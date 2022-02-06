@@ -6,6 +6,8 @@ import Link from 'next/link'        // <Link> is built into Next.js
 // import '../styles/global.css'    // NO! CANNOT DO THIS!
 // edit <style jsx> at bottom of file...
 
+// import styles from '../components/layout.module.css';
+
 export default function Home() {
   return (
     <div className="container">
@@ -74,7 +76,8 @@ export default function Home() {
         </a>
       </footer>
 
-      <style jsx>{`
+      <style jsx>
+        {`
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -132,7 +135,12 @@ export default function Home() {
         }
         */
 
-        
+
+        /* does not work - investigate later... */
+        .h1 {
+          margin: 0;
+        }
+
         .title {
           margin: 0;
           line-height: 1.15;
@@ -194,7 +202,8 @@ export default function Home() {
 
         .card p {
           margin: 0;
-          font-size: 1.25rem;
+          /* font-size: 1.25rem; */
+          font-size: 1rem;
           line-height: 1.5;
         }
 
@@ -208,22 +217,26 @@ export default function Home() {
             flex-direction: column;
           }
         }
-      `}</style>
+        `}
+      </style>
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
+      <style jsx global>
+        {`
+          html,
+          body {
+            padding: 0;
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+              Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+              sans-serif;
+          }
 
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+          * {
+            box-sizing: border-box;
+          }
+        `}
+      </style>
+
     </div>
   )
 }

@@ -1,4 +1,9 @@
-/* global.css */
+/*
+  global.css
+  this is the (only) global CSS file in the app
+  
+  NOTE: THIS CAN ONLY BE IMPORTED BY /pages/_app.js
+*/
 
 html,
 body {

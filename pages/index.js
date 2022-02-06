@@ -1,4 +1,10 @@
-import Head from 'next/head'
+// index.js
+
+import Head from 'next/head'        // <Head> is built into Next.js
+import Link from 'next/link'        // <Link> is built into Next.js
+
+// import '../styles/global.css'    // NO! CANNOT DO THIS!
+// edit <style jsx> at bottom of file...
 
 export default function Home() {
   return (
@@ -9,9 +15,18 @@ export default function Home() {
       </Head>
 
       <main>
+        {/*
         <h1 className="title">
           Hi Andy! Learn <a href="https://nextjs.org">Next.js!</a>
         </h1>
+        */}
+
+        <h1 className="title">
+          Read{' '}
+          <Link href="/posts/first-post">
+            <a>this page!</a>
+          </Link>
+        </h1>        
 
         <p className="description">
           Get started by editing <code>pages/index.js</code>
@@ -107,16 +122,21 @@ export default function Home() {
           text-decoration: none;
         }
 
+
+        /* comments work here! */
+        /* 
         .title a:hover,
         .title a:focus,
         .title a:active {
           text-decoration: underline;
         }
+        */
 
+        
         .title {
           margin: 0;
           line-height: 1.15;
-          font-size: 4rem;
+          font-size: 2.5rem;
         }
 
         .title,

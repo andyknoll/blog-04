@@ -37,7 +37,7 @@ export default function QuoteFetcher({}) {
             <div className={styles.flexRow}>
                 <button className={styles.buttonA} onClick={fetchQuote}>Fetch Latin Quote</button>
                 <div className={styles.flexRow}>
-                    <label>Throttle fetch 1/2 second</label>
+                    <label>Throttle </label>
                     <input  className={styles.checkbox} type={"checkbox"} checked={isDelayed} onClick={delayQuote}/>
                 </div>
             </div>

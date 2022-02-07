@@ -39,7 +39,7 @@ export default function QuoteFetcher({}) {
                 <button className={styles.buttonA} onClick={fetchQuote}>Fetch Latin Quote</button>
                 <div className={styles.flexRow}>
                     <label>Throttle </label>
-                    <input  className={styles.checkbox} type={"checkbox"} checked={isDelayed} onClick={delayQuote}/>
+                    <input  className={styles.checkbox} type={"checkbox"} defaultChecked={isDelayed} onClick={delayQuote}/>
                 </div>
             </div>
             <p>using random index: <strong>{randomIdx}</strong></p>

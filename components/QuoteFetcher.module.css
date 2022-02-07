@@ -1,0 +1,13 @@
+/* QuoteFetcher.module.css */
+
+.quoteFetcher {
+    width: 100%;
+    padding: 10px;
+    background-color: #fafafa;
+    /* border: 1px solid gray; */
+}
+
+.buttonA {
+    height: 40px;
+    width: 150px;
+}

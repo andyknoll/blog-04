@@ -10,7 +10,8 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 
 const name = 'Andy Knoll'
-export const siteTitle = 'Next.js Profile Website'
+// export const siteTitle = 'Next.js Profile Website'
+export const siteTitle = 'Next.js Fetch Test Site'
 
 export default function Layout({ children, home }) {
   return (

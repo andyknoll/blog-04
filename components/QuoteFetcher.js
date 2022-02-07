@@ -3,7 +3,6 @@
 import React from 'react';
 import styles from './QuoteFetcher.module.css'
 
-
 export default function QuoteFetcher({}) {
 
     const [quote, setQuote] = React.useState("No quote has been fetched yet.");

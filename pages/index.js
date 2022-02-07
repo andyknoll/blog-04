@@ -44,6 +44,9 @@ export default function Home({ allPostsData }) {
         <QuoteFetcher />
       </section>
             
+      <br/>
+      <section>
+        <small>(this actually fetches 200 JSON quote objects each time which demos the performance)</small>      </section>
 
     </Layout>
   )

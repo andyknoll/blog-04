@@ -3,25 +3,45 @@
 import React from 'react';
 import styles from './QuoteFetcher.module.css'
 
-export default function QuoteFetcher({ children, home }) {
+export default function QuoteFetcher({}) {
 
     const [quote, setQuote] = React.useState("No quote has been fetched yet.");
+    const [isDelayed, setIsDelayed] = React.useState(true);        // for throttling
+    const [randomIdx, setRandomIdx] = React.useState(Math.floor(Math.random() * 200));
+
     const fetchUrl = "https://jsonplaceholder.typicode.com/todos/";
 
     const fetchQuote = () => {
         setQuote("fetching next quote...");
-        fetch(fetchUrl)
-        .then(response => response.json())
-        .then(quotes => {
-            //console.log(quotes);
-            const quote = quotes[Math.floor(Math.random() * 100)];
-            setQuote(quote.title);
-        })
+        setRandomIdx(Math.floor(Math.random() * 200));
+
+        let delayMsecs = 0;
+        if (isDelayed) delayMsecs = 500;
+
+        setTimeout(() => {
+            fetch(fetchUrl)
+            .then(response => response.json())
+            .then(quotes => {
+                const quote = quotes[randomIdx];
+                setQuote(quote.title);
+            })    
+        }, delayMsecs);
+    }
+
+    const delayQuote = () => {
+        setIsDelayed(!isDelayed);
     }
 
     return (
         <div className={styles.quoteFetcher}>
-            <button className={styles.buttonA} onClick={fetchQuote}>Fetch Quote</button>
+            <div className={styles.flexRow}>
+                <button className={styles.buttonA} onClick={fetchQuote}>Fetch Latin Quote</button>
+                <div className={styles.flexRow}>
+                    <label>Throttle fetch 1/2 second</label>
+                    <input  className={styles.checkbox} type={"checkbox"} checked={isDelayed} onClick={delayQuote}/>
+                </div>
+            </div>
+            <p>using random index: <strong>{randomIdx}</strong></p>
             <p>{quote}</p>
         </div>
     )

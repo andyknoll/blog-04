@@ -7,7 +7,19 @@
     /* border: 1px solid gray; */
 }
 
+.flexRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .buttonA {
     height: 40px;
-    width: 150px;
+    width: 180px;
 }
+
+.checkbox {
+    height: 24px;
+    width: 24px;
+}
+
